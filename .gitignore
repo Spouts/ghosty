@@ -5,3 +5,8 @@
 /sampletext.txt
 /flashbots.js
 node_modules
+/views/peos.pem
+/.gitignore
+/array.js
+/balancer.js
+/sol.txt
