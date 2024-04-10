@@ -1,0 +1,7 @@
+/.env
+/public
+/routes
+/somethingintheway.js
+/sampletext.txt
+/flashbots.js
+node_modules

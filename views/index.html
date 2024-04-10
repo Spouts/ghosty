@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .always-show {
+      column-count: 1;
+    }
+  </style>
+  <meta charset="UTF-8" />
+  <title>Bit Bit  </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <link rel="stylesheet" href="index.css" />
+
+
+
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="module" src="server.js"></script>
+
+
+<body>
+  <h1>
+    🦄
+  </h1>
+  <p>Boooo</p>
+  
+
+  <form id="form" method="Post">
+    Anti Bot : <label class="switch" for="antibot"> <input type="checkbox" id="antibot" onclick="myFunction()"><span
+        class="slider round"></span></label>
+    <h2 id="dead" style="display:none">
+      <label for="DeadBlocks">Dead Blocks :</label><br>
+      <input id="DeadBlocks" name="DeadBlocks" type="number" placeholder="Number of Blocks to wait"></input>
+      <label for="GasLimit">Priority Fee (Gwei) :</label><br>
+      <input id="GasLimit" name="GasLimit" type="text" placeholder="Miner's tip"></input>
+      <label for="Gasprice">Max Fee (Gwei) :</label><br>
+      <input id="Gasprice" name="Gasprice" type="text" placeholder=" Max Fee"></input>
+    </h2>
+    <h3>
+      <div class="dropdown1" >
+        <label for="BuyStrategy">Buy From:</label><br>
+        <select name="BuyStrategy" id="BuyStrategy">
+          <option value="9" selected style="color: #000000;">9</option>
+          <option value="11" style="color: #000000;">11</option>
+        </select>
+      </div>
+        <div class="dropdown2">
+          <label for="Wallets">number of Wallets:</label><br>
+        <div class="w" >
+          <select name="Wallets" id="Wallets">
+            <option value="1" selected style="color: #000000;" >1</option>
+            <option value="2"  style="color: #000000;">2</option>
+            <option value="3"   style="color: #000000;">3</option>
+            <option value="4"  style="color: #000000;">4</option>
+            <option value="5"  style="color: #000000;">5</option>
+          </select>
+        </div>
+        <div class="dropdown3">
+          <label for="PairAdress">Pair  Adress :</label><br>
+        <div class="w" ">
+          <select name="PairAdress" id="PairAdress">
+            <option value="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2" selected style="color: #000000;" >WETH</option>
+            <option value="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2,0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"  style="color: #000000;">USDC</option>
+            <option value="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2,0xdAC17F958D2ee523a2206206994597C13D831ec7"  style="color: #000000;">TETHER</option>
+            <option value="0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2,0x6B175474E89094C44Da98b954EedeAC495271d0F"  style="color: #000000;">DAI</option>
+          </select>
+        </div>
+      </div>
+      <label for="BuyTx">BuyTx:</label><br>
+      <p>9 decimals: 000000000</p>
+      <p>18 decimals: 000000000000000000</p>
+      <input id="BuyTx" name="BuyTx" type="text" placeholder="Amount Out with decimals"></input>
+      <br>
+      <label for="EthtoPay" >Eth to Pay:</label><br>
+      <input id="EthtoPay" name="EthtoPay" type="text" placeholder="Amount of Eth "></input>
+      <br>
+      <button name="Run" id="Run" type="put" formaction="/Run" onclick="ButtonPress()">Run</button>
+      <col>
+      <col>
+      <col>
+      <button name="Safety" id="Safety" value="Active" formaction="/Safety" onclick="Activate()">Active</button>
+      <col>
+      <col>
+      <col>
+      <button name="Approve" id="Approve" formaction="/Approve">Approve</button>
+      <col>
+      <col>
+      <col>
+      <button name="BuyNow" id="BuyNow" formaction="/BuyNow">Buy Now</button>
+      <!--<button name="BuyFlashbots" id="BuyFlashbots" formaction="/BuyFlashbots">Flashbots</button>-->
+      <button name="SellNow" id="SellNow" formaction="/SellNow">Sell Now</button>
+      <br>
+      <button name="Stop" id="Stop" formaction="/Stop">Stop</button>
+    </h3>
+
+    <h4>
+      <label for="ContractAddress">Contract Address:</label><br>
+      <input id="ContractAddress" name="ContractAddress" type="text" placeholder="0x...."></input>
+      <br>
+      <label for="DevAddress">Dev Address:</label><br>
+      <input id="DevAddress" name="DevAddress" type="text" placeholder="0x..." value=""></input>
+
+      <br>
+      <label for="StartingFunction">Starting Function:</label><br>
+      <input id="StartingFunction" name="StartingFunction" type="text" placeholder="Starting Function()"></input>
+      <fieldset>
+      <div class="container" id="wa">
+      
+    <!--    <div class="cat comedy">
+          <label>
+            <input type="checkbox" value="" checked><span>0x733...8266</span>
+          </label>
+        </div>
+        <div class="cat action">
+          <label>
+            <input type="checkbox" value=""><span>0x4Fd...7155</span>
+          </label>
+        </div>
+      
+      
+      
+        <div class="cat crime">
+          <label>
+            <input type="checkbox" value=""><span>0xC40...f31B</span>
+          </label>
+        </div>
+      
+        <div class="cat history">
+          <label>
+            <input type="checkbox" value=""><span>0xf37...47f7</span>
+          </label>
+        </div>
+      -->
+        </div>
+      </fieldset>
+      </div>
+    </h4>
+  </div> 
+  
+    <br>
+    <br>
+
+
+
+  
+  
+
+  </form>
+  <script>
+    // let form = document.querySelector("#form")
+    // $('#form').submit(function(e){
+    //   e.preventDefault();
+    //   $.ajax({
+    //       method: "POST",
+    //       url: "/Stop"
+    //   })
+    // })
+
+    var name="Active"
+    
+    function myFunction() {
+      var checkBox = document.getElementById("antibot");
+      var text = document.getElementById("dead");
+      if (checkBox.checked) {
+        text.style.display = "block";
+      } else {
+        text.style.display = "none";
+      }
+    }
+
+    // function ButtonPress() {
+    //   var button = document.getElementById("Run");
+    //   button.disable = true
+    // }
+
+    function Activate(){
+      
+      var btn = document.getElementById("Safety");
+      btn.addEventListener("click", ()=>{
+        if(btn.innerText === "Active"){
+          console.log(1)
+        btn.innerText = "Sleeping";
+    }else{
+        btn.innerText= "Active";
+    }
+    })
+  }
+  </script>
+</body>
+
+</html>

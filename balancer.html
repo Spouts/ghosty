@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+          .always-show {
+            column-count: 1;
+          }
+        </style>
+        <meta charset="UTF-8" />
+        <title>Bit Bit</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+        
+
+<body>
+    <form> 
+        <label id="Wallet"> Wallet addres :</label><br>
+        <label id="token address"> Token address :</label><br>
+        <label id ="pool address"> Pool address :</label><br>
+        <label id="input"> Token input address :</label><br>
+        <label id="amout"> Amount :</label><br>
+        <button id="button" >Get hex</button><br>
+    </form>
+    <script>
+        document.getElementById('button').addEventListener("click", loadtext);
+        function loadtext(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET','123',true)
+            xhr.onload=function(){
+                xhr.onprogress=function(){
+                    console.log(xhr.readyState)
+                }
+                if (this.status==200){
+                    console.log(this.responseText)
+                }
+            }
+
+            xhr.send()
+        }
+    </script>
+</body>
+</html>
